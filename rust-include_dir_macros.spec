@@ -6,7 +6,7 @@
 
 Name:           rust-include_dir_macros
 Version:        0.7.4
-Release:        %autorelease
+Release:        1%{?dist}
 Summary:        Procedural macro used by include_dir
 
 License:        MIT

@@ -6,7 +6,7 @@
 
 Name:           rust-cursive-macros
 Version:        0.1.0
-Release:        %autorelease
+Release:        1%{?dist}
 Summary:        Proc-macros for the cursive TUI library
 
 License:        MIT

@@ -1,7 +1,7 @@
 Name:		tbtools
 Summary:	Thunderbolt/USB4 debugging tools
 Version:	0.5.0
-Release:	%autorelease
+Release:	1%{?dist}
 # TODO: Check license of files and deps
 License:	MIT
 URL:		https://github.com/intel/tbtools

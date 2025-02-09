@@ -6,7 +6,7 @@
 
 Name:           rust-cursive0.21
 Version:        0.21.1
-Release:        %autorelease
+Release:        1%{?dist}
 Summary:        TUI (Text User Interface) library focused on ease-of-use
 
 License:        MIT

@@ -6,7 +6,7 @@
 
 Name:           rust-include_dir
 Version:        0.7.4
-Release:        %autorelease
+Release:        1%{?dist}
 Summary:        Embed the contents of a directory in your binary
 
 License:        MIT

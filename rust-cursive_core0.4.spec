@@ -6,7 +6,7 @@
 
 Name:           rust-cursive_core0.4
 Version:        0.4.6
-Release:        %autorelease
+Release:        1%{?dist}
 Summary:        Core components for the Cursive TUI
 
 License:        MIT

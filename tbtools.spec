@@ -1,7 +1,7 @@
 Name:		tbtools
 Summary:	Thunderbolt/USB4 debugging tools
 Version:	0.5.0
-Release:	1%{?dist}
+Release:	2%{?dist}
 # TODO: Check license of files and deps
 # TODO: Rust RPM Macros provide license generation etc...
 License:	MIT
@@ -10,6 +10,7 @@ URL:		https://github.com/intel/tbtools
 Source:		%{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires:  cargo-rpm-macros >= 24
+BuildRequires:	make
 
 %description
 This is a collection of tools for Linux Thunderbolt/USB4 development, debugging

@@ -4,7 +4,7 @@
 Name:		tbtools
 Summary:	Thunderbolt/USB4 debugging tools
 Version:	0.5.0
-Release:	4%{?dist}
+Release:	5%{?dist}
 # TODO: Need to poke upstream to set this in Cargo.toml
 # TODO: Need to manually check all upstream files for potential license issues!
 SourceLicense:	MIT
@@ -20,7 +20,7 @@ SourceLicense:	MIT
 # MIT OR Apache-2.0
 # Unlicense OR MIT
 License:	MIT AND Apache-2.0 AND Unicode-DFS-2016
-URL:		https://github.com/intel/tbtools
+URL:		https://github.com/intel/%{name}
 
 Source:		%{url}/archive/refs/tags/v%{version}.tar.gz
 
@@ -36,7 +36,7 @@ and validation but may be useful to others as well.
 %define cargo_install_lib 0
 
 %prep
-%autosetup -p1 -n tbtools-%{version}
+%autosetup -p1 -n %{name}-%{version}
 %cargo_prep
 
 %generate_buildrequires
@@ -88,7 +88,7 @@ PREFIX=%{buildroot}/%{_prefix} make install CARGO=/usr/bin/true
 %{bash_completions_dir}/tbmargin
 %{bash_completions_dir}/tbset
 %{bash_completions_dir}/tbtrace
-%{_datadir}/tbtools
+%{_datadir}/%{name}
 
 %changelog
 %autochangelog

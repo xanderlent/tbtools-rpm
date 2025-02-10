@@ -4,7 +4,7 @@
 Name:		tbtools
 Summary:	Thunderbolt/USB4 debugging tools
 Version:	0.5.0
-Release:	3%{?dist}
+Release:	4%{?dist}
 # TODO: Need to poke upstream to set this in Cargo.toml
 # TODO: Need to manually check all upstream files for potential license issues!
 SourceLicense:	MIT
@@ -37,8 +37,6 @@ and validation but may be useful to others as well.
 
 %prep
 %autosetup -p1 -n tbtools-%{version}
-# Modify the Makefile to skip cargo install, since we have a macro for that
-sed -e 's/$(CARGO) install $(IFLAGS) --path . --root $(PREFIX)/# skipping built-in cargo install/' -i Makefile
 %cargo_prep
 
 %generate_buildrequires
@@ -53,7 +51,8 @@ sed -e 's/$(CARGO) install $(IFLAGS) --path . --root $(PREFIX)/# skipping built-
 %install
 # Since we skip cargo install in the Makefile, use our macro instead
 %cargo_install
-PREFIX=%{buildroot}/%{_prefix} make install
+# Setting CARGO=/usr/bin/true skips the cargo steps in the Makefile without modifying it
+PREFIX=%{buildroot}/%{_prefix} make install CARGO=/usr/bin/true
 
 %if %{with check}
 %check

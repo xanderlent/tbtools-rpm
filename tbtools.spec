@@ -4,12 +4,13 @@
 Name:		tbtools
 Summary:	Thunderbolt/USB4 debugging tools
 Version:	0.5.0
-Release:	5%{?dist}
+Release:	6%{?dist}
 # TODO: Need to poke upstream to set this in Cargo.toml
 # TODO: Need to manually check all upstream files for potential license issues!
 SourceLicense:	MIT
 # TODO: This will NOT be correct until all dependencies have correct license metadata!
 # License summary of integrated packages:
+#
 # (MIT OR Apache-2.0) AND Unicode-DFS-2016
 # Apache-2.0
 # Apache-2.0 OR BSL-1.0
@@ -19,7 +20,7 @@ SourceLicense:	MIT
 # MIT
 # MIT OR Apache-2.0
 # Unlicense OR MIT
-License:	MIT AND Apache-2.0 AND Unicode-DFS-2016
+License:	((MIT OR Apache-2.0) AND Unicode-DFS-2016) AND Apache-2.0 AND (Apache-2.0 OR BSL-1.0) AND (Apache-2.0 OR MIT) AND (Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT) AND (Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIt) AND MIT AND (MIT or Apache-2.0) AND (Unlicense MIT)
 URL:		https://github.com/intel/%{name}
 
 Source:		%{url}/archive/refs/tags/v%{version}.tar.gz

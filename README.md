@@ -18,11 +18,11 @@ Shows only those dependencies not currently packaged in Fedora.
 
 ## Commands to regenerate packages
 
-`rust2rpm --no-rpmautospec -C rust2rpm-include_dir_macros.toml include_dir_macros`
-`rust2rpm --no-rpmautospec -C rust2rpm-include_dir.toml include_dir`
-`rust2rpm --no-rpmautospec -C rust2rpm-cursive_macros.toml -r cursive-macros`
-`rust2rpm --no-rpmautospec -C rust2rpm-cursive_core.toml --compat cursive_core`
-``
+`rust2rpm --no-rpmautospec -C rust2rpm-include_dir_macros.toml include_dir_macros`  
+`rust2rpm --no-rpmautospec -C rust2rpm-include_dir.toml include_dir`  
+`rust2rpm --no-rpmautospec -C rust2rpm-cursive_macros.toml -r cursive-macros`  
+`rust2rpm --no-rpmautospec -C rust2rpm-cursive_core.toml --compat cursive_core`  
+``  
 
 ## Build Status
 ### tbtools

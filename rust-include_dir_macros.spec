@@ -6,12 +6,15 @@
 
 Name:           rust-include_dir_macros
 Version:        0.7.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Procedural macro used by include_dir
 
 License:        MIT
 URL:            https://crates.io/crates/include_dir_macros
 Source:         %{crates_source}
+# * LICENSE file not correctly included upstream
+# * See for ex: https://github.com/Michael-F-Bryan/include_dir/pull/107
+Source2:        https://raw.githubusercontent.com/Michael-F-Bryan/include_dir/d3c0eaede1b2449bc8e3a281fdbfd40cfc61f0f4/LICENSE
 
 BuildRequires:  cargo-rpm-macros >= 24
 
@@ -30,7 +33,7 @@ This package contains library source intended for building other packages which
 use the "%{crate}" crate.
 
 %files          devel
-# FIXME: no license files detected
+%license %{crate_instdir}/LICENSE
 %doc %{crate_instdir}/README.md
 %{crate_instdir}/
 
@@ -46,8 +49,33 @@ use the "default" feature of the "%{crate}" crate.
 %files       -n %{name}+default-devel
 %ghost %{crate_instdir}/Cargo.toml
 
+%package     -n %{name}+metadata-devel
+Summary:        %{summary}
+BuildArch:      noarch
+
+%description -n %{name}+metadata-devel %{_description}
+
+This package contains library source intended for building other packages which
+use the "metadata" feature of the "%{crate}" crate.
+
+%files       -n %{name}+metadata-devel
+%ghost %{crate_instdir}/Cargo.toml
+
+%package     -n %{name}+nightly-devel
+Summary:        %{summary}
+BuildArch:      noarch
+
+%description -n %{name}+nightly-devel %{_description}
+
+This package contains library source intended for building other packages which
+use the "nightly" feature of the "%{crate}" crate.
+
+%files       -n %{name}+nightly-devel
+%ghost %{crate_instdir}/Cargo.toml
+
 %prep
 %autosetup -n %{crate}-%{version} -p1
+cp -L %{SOURCE2} .
 %cargo_prep
 
 %generate_buildrequires
@@ -65,4 +93,5 @@ use the "default" feature of the "%{crate}" crate.
 %endif
 
 %changelog
-%autochangelog
+* Tue Apr 15 2025 Alexander F. Lent <lx@xanderlent.com> - 0.7.4-2
+- Initial package

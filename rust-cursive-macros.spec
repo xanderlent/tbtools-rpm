@@ -6,12 +6,19 @@
 
 Name:           rust-cursive-macros
 Version:        0.1.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Proc-macros for the cursive TUI library
 
 License:        MIT
 URL:            https://crates.io/crates/cursive-macros
 Source:         %{crates_source}
+# * Missing LICENSE file is fixed upstream
+# * https://github.com/gyscos/cursive/pull/814
+Source2:        https://github.com/gyscos/cursive/raw/main/LICENSE
+# Manually created patch for downstream crate metadata changes
+# * LICENSE not in sources fixed upstream
+# * https://github.com/gyscos/cursive/pull/818
+Patch:          cursive-macros-fix-metadata.diff
 
 BuildRequires:  cargo-rpm-macros >= 24
 
@@ -30,7 +37,7 @@ This package contains library source intended for building other packages which
 use the "%{crate}" crate.
 
 %files          devel
-# FIXME: no license files detected
+%license %{crate_instdir}/LICENSE
 %doc %{crate_instdir}/Readme.md
 %{crate_instdir}/
 
@@ -97,6 +104,7 @@ use the "syn" feature of the "%{crate}" crate.
 %prep
 %autosetup -n %{crate}-%{version} -p1
 %cargo_prep
+cp -pav %{SOURCE2} .
 
 %generate_buildrequires
 %cargo_generate_buildrequires
@@ -113,4 +121,5 @@ use the "syn" feature of the "%{crate}" crate.
 %endif
 
 %changelog
-%autochangelog
+* Tue Apr 15 2025 Alexander F. Lent <lx@xanderlent.com> - 0.1.0-2
+- Initial package

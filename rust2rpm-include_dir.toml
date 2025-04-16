@@ -1,0 +1,21 @@
+[package]
+license-files = [ "LICENSE" ]
+
+[[package.extra-sources]]
+number = 2
+file = "https://raw.githubusercontent.com/Michael-F-Bryan/include_dir/d3c0eaede1b2449bc8e3a281fdbfd40cfc61f0f4/LICENSE"
+comments = [
+    "LICENSE file not correctly included upstream",
+    "See for ex: https://github.com/Michael-F-Bryan/include_dir/pull/107",
+]
+
+[scripts]
+prep.pre = [
+    "cp -L %{SOURCE2} .",
+]
+
+[tests]
+run = "none"
+comments = [
+    "Tests involve using include_dir on files not shipped in the crate",
+]

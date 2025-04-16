@@ -1,0 +1,19 @@
+[package]
+license-files = ["LICENSE"]
+cargo-toml-patch-comments = [
+    "LICENSE not in sources fixed upstream",
+    "https://github.com/gyscos/cursive/pull/818",
+]
+
+[[package.extra-sources]]
+number = 2
+file = "https://github.com/gyscos/cursive/raw/main/LICENSE"
+comments = [
+    "Missing LICENSE file is fixed upstream",
+    "https://github.com/gyscos/cursive/pull/814",
+]
+
+[scripts]
+prep.post = [
+    "cp -pav %{SOURCE2} .",
+]

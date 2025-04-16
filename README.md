@@ -10,11 +10,19 @@ Upstream is located on Intel's GitHub: [intel/tbtools](https://github.com/intel/
 Shows only those dependencies not currently packaged in Fedora.
 
 - tbtools
-  - rust-cursive (version 0.21 - Fedora packages 0.20)
-    - rust-cursive\_core (version 0.4 - Fedora packages 0.3)
-      - rust-cursive-macros (would need a new package for Fedora)
-  - rust-include\_dir (would need a new package for Fedora)
-    - rust-include\_dir\_macros (would need a new package for Fedora)
+  - rust-cursive ([RHBZ#2302543](https://bugzilla.redhat.com/show_bug.cgi?id=2302543))
+    - rust-cursive\_core ([RHBZ#2302544](https://bugzilla.redhat.com/show_bug.cgi?id=2302544))
+      - rust-cursive-macros ([RHBZ#2353989](https://bugzilla.redhat.com/show_bug.cgi?id=2353989))
+  - rust-include\_dir ([RHBZ#2360035](https://bugzilla.redhat.com/show_bug.cgi?id=2360035))
+    - rust-include\_dir\_macros ([RHBZ#2360034](https://bugzilla.redhat.com/show_bug.cgi?id=2360034))
+
+## Commands to regenerate packages
+
+`rust2rpm --no-rpmautospec -C rust2rpm-include_dir_macros.toml include_dir_macros`
+`rust2rpm --no-rpmautospec -C rust2rpm-include_dir.toml include_dir`
+`rust2rpm --no-rpmautospec -C rust2rpm-cursive_macros.toml -r cursive-macros`
+``
+``
 
 ## Build Status
 ### tbtools

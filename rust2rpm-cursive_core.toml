@@ -1,0 +1,6 @@
+[features]
+hide = [
+    "ansi",
+    "markdown",
+]
+

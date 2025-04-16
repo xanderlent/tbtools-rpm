@@ -6,7 +6,7 @@
 
 Name:           rust-cursive_core0.4
 Version:        0.4.6
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Core components for the Cursive TUI
 
 License:        MIT
@@ -46,6 +46,42 @@ use the "default" feature of the "%{crate}" crate.
 %files       -n %{name}+default-devel
 %ghost %{crate_instdir}/Cargo.toml
 
+%package     -n %{name}+builder-devel
+Summary:        %{summary}
+BuildArch:      noarch
+
+%description -n %{name}+builder-devel %{_description}
+
+This package contains library source intended for building other packages which
+use the "builder" feature of the "%{crate}" crate.
+
+%files       -n %{name}+builder-devel
+%ghost %{crate_instdir}/Cargo.toml
+
+%package     -n %{name}+doc-cfg-devel
+Summary:        %{summary}
+BuildArch:      noarch
+
+%description -n %{name}+doc-cfg-devel %{_description}
+
+This package contains library source intended for building other packages which
+use the "doc-cfg" feature of the "%{crate}" crate.
+
+%files       -n %{name}+doc-cfg-devel
+%ghost %{crate_instdir}/Cargo.toml
+
+%package     -n %{name}+toml-devel
+Summary:        %{summary}
+BuildArch:      noarch
+
+%description -n %{name}+toml-devel %{_description}
+
+This package contains library source intended for building other packages which
+use the "toml" feature of the "%{crate}" crate.
+
+%files       -n %{name}+toml-devel
+%ghost %{crate_instdir}/Cargo.toml
+
 %prep
 %autosetup -n %{crate}-%{version} -p1
 %cargo_prep
@@ -65,4 +101,5 @@ use the "default" feature of the "%{crate}" crate.
 %endif
 
 %changelog
-%autochangelog
+* Wed Apr 16 2025 Alexander F. Lent <lx@xanderlent.com> - 0.4.6-2
+- Initial package

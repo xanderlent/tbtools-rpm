@@ -22,7 +22,7 @@ Shows only those dependencies not currently packaged in Fedora.
 `rust2rpm --no-rpmautospec -C rust2rpm-include_dir.toml include_dir`  
 `rust2rpm --no-rpmautospec -C rust2rpm-cursive_macros.toml -r cursive-macros`  
 `rust2rpm --no-rpmautospec -C rust2rpm-cursive_core.toml --compat cursive_core`  
-``  
+`rust2rpm --no-rpmautospec -C rust2rpm-cursive.toml --compat cursive`  
 
 ## Build Status
 ### tbtools

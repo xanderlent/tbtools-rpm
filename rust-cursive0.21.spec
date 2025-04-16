@@ -6,7 +6,7 @@
 
 Name:           rust-cursive0.21
 Version:        0.21.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        TUI (Text User Interface) library focused on ease-of-use
 
 License:        MIT
@@ -46,6 +46,18 @@ use the "default" feature of the "%{crate}" crate.
 %files       -n %{name}+default-devel
 %ghost %{crate_instdir}/Cargo.toml
 
+%package     -n %{name}+builder-devel
+Summary:        %{summary}
+BuildArch:      noarch
+
+%description -n %{name}+builder-devel %{_description}
+
+This package contains library source intended for building other packages which
+use the "builder" feature of the "%{crate}" crate.
+
+%files       -n %{name}+builder-devel
+%ghost %{crate_instdir}/Cargo.toml
+
 %package     -n %{name}+crossterm-backend-devel
 Summary:        %{summary}
 BuildArch:      noarch
@@ -56,6 +68,66 @@ This package contains library source intended for building other packages which
 use the "crossterm-backend" feature of the "%{crate}" crate.
 
 %files       -n %{name}+crossterm-backend-devel
+%ghost %{crate_instdir}/Cargo.toml
+
+%package     -n %{name}+doc-cfg-devel
+Summary:        %{summary}
+BuildArch:      noarch
+
+%description -n %{name}+doc-cfg-devel %{_description}
+
+This package contains library source intended for building other packages which
+use the "doc-cfg" feature of the "%{crate}" crate.
+
+%files       -n %{name}+doc-cfg-devel
+%ghost %{crate_instdir}/Cargo.toml
+
+%package     -n %{name}+ncurses-backend-devel
+Summary:        %{summary}
+BuildArch:      noarch
+
+%description -n %{name}+ncurses-backend-devel %{_description}
+
+This package contains library source intended for building other packages which
+use the "ncurses-backend" feature of the "%{crate}" crate.
+
+%files       -n %{name}+ncurses-backend-devel
+%ghost %{crate_instdir}/Cargo.toml
+
+%package     -n %{name}+pancurses-backend-devel
+Summary:        %{summary}
+BuildArch:      noarch
+
+%description -n %{name}+pancurses-backend-devel %{_description}
+
+This package contains library source intended for building other packages which
+use the "pancurses-backend" feature of the "%{crate}" crate.
+
+%files       -n %{name}+pancurses-backend-devel
+%ghost %{crate_instdir}/Cargo.toml
+
+%package     -n %{name}+termion-backend-devel
+Summary:        %{summary}
+BuildArch:      noarch
+
+%description -n %{name}+termion-backend-devel %{_description}
+
+This package contains library source intended for building other packages which
+use the "termion-backend" feature of the "%{crate}" crate.
+
+%files       -n %{name}+termion-backend-devel
+%ghost %{crate_instdir}/Cargo.toml
+
+%package     -n %{name}+toml-devel
+Summary:        %{summary}
+BuildArch:      noarch
+
+%description -n %{name}+toml-devel %{_description}
+
+This package contains library source intended for building other packages which
+use the "toml" feature of the "%{crate}" crate.
+
+%files       -n %{name}+toml-devel
 %ghost %{crate_instdir}/Cargo.toml
 
 %prep
@@ -77,4 +149,5 @@ use the "crossterm-backend" feature of the "%{crate}" crate.
 %endif
 
 %changelog
-%autochangelog
+* Wed Apr 16 2025 Alexander F. Lent <lx@xanderlent.com> - 0.21.1-2
+- Initial package

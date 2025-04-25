@@ -6,12 +6,15 @@
 
 Name:           rust-cursive_core0.4
 Version:        0.4.6
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Core components for the Cursive TUI
 
 License:        MIT
 URL:            https://crates.io/crates/cursive_core
 Source:         %{crates_source}
+# Manually created patch for downstream crate metadata changes
+# * Relax version bound for compact_str
+Patch:          cursive_core-fix-metadata.diff
 
 BuildRequires:  cargo-rpm-macros >= 24
 
@@ -101,5 +104,5 @@ use the "toml" feature of the "%{crate}" crate.
 %endif
 
 %changelog
-* Wed Apr 16 2025 Alexander F. Lent <lx@xanderlent.com> - 0.4.6-2
+* Fri Apr 25 2025 Alexander F. Lent <lx@xanderlent.com> - 0.4.6-3
 - Initial package

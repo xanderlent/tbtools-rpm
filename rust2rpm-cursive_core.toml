@@ -1,3 +1,8 @@
+[package]
+cargo-toml-patch-comments = [
+    "Relax version bound for compact_str",
+]
+
 [features]
 hide = [
     "ansi",

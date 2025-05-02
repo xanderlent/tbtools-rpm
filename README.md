@@ -9,9 +9,9 @@ Upstream is located on Intel's GitHub: [intel/tbtools](https://github.com/intel/
 ## Dependency tree
 Shows only those dependencies not currently packaged in Fedora.
 
-- tbtools
-  - rust-cursive ([RHBZ#2302543](https://bugzilla.redhat.com/show_bug.cgi?id=2302543), [rpms/rust-cursive#1](https://src.fedoraproject.org/rpms/rust-cursive/pull-request/1))
-    - rust-cursive\_core ([RHBZ#2302544](https://bugzilla.redhat.com/show_bug.cgi?id=2302544), [rpms/rust-cursive\_core#1](https://src.fedoraproject.org/rpms/rust-cursive_core/pull-request/1))
+- tbtools ([RHBZ#2363587](https://bugzilla.redhat.com/show_bug.cgi?id=2363587))
+  - rust-cursive (upstream in F41+, COPR build for F40) ~([RHBZ#2302543](https://bugzilla.redhat.com/show_bug.cgi?id=2302543), [rpms/rust-cursive#1](https://src.fedoraproject.org/rpms/rust-cursive/pull-request/1))~
+    - rust-cursive\_core (upstream in F41+, COPR build for F40) ~([RHBZ#2302544](https://bugzilla.redhat.com/show_bug.cgi?id=2302544), [rpms/rust-cursive\_core#1](https://src.fedoraproject.org/rpms/rust-cursive_core/pull-request/1))~
       - rust-cursive-macros (upstream in F40+) ~([RHBZ#2353989](https://bugzilla.redhat.com/show_bug.cgi?id=2353989))~
   - rust-include\_dir ([RHBZ#2360035](https://bugzilla.redhat.com/show_bug.cgi?id=2360035))
     - rust-include\_dir\_macros ([RHBZ#2360034](https://bugzilla.redhat.com/show_bug.cgi?id=2360034))
@@ -20,16 +20,14 @@ Shows only those dependencies not currently packaged in Fedora.
 
 `rust2rpm --no-rpmautospec -C rust2rpm-include_dir_macros.toml include_dir_macros`  
 `rust2rpm --no-rpmautospec -C rust2rpm-include_dir.toml include_dir`  
-`rust2rpm --no-rpmautospec -C rust2rpm-cursive_core.toml -r --compat cursive_core`  
-`rust2rpm --no-rpmautospec -C rust2rpm-cursive.toml --compat cursive`  
 
 ## Build Status
 ### tbtools
 [![Copr build status](https://copr.fedorainfracloud.org/coprs/xanderlent/tbtools/package/tbtools/status_image/last_build.png)](https://copr.fedorainfracloud.org/coprs/xanderlent/tbtools/package/tbtools/)
-### rust-cursive0.21
-[![Copr build status](https://copr.fedorainfracloud.org/coprs/xanderlent/tbtools/package/rust-cursive0.21/status_image/last_build.png)](https://copr.fedorainfracloud.org/coprs/xanderlent/tbtools/package/rust-cursive0.21/)
-### rust-cursive\_core0.4
-[![Copr build status](https://copr.fedorainfracloud.org/coprs/xanderlent/tbtools/package/rust-cursive_core0.4/status_image/last_build.png)](https://copr.fedorainfracloud.org/coprs/xanderlent/tbtools/package/rust-cursive_core0.4/)
+### rust-cursive (for Fedora 40)
+[![Copr build status](https://copr.fedorainfracloud.org/coprs/xanderlent/tbtools/package/rust-cursive/status_image/last_build.png)](https://copr.fedorainfracloud.org/coprs/xanderlent/tbtools/package/rust-cursive/)
+### rust-cursive\_core (for Fedora 40)
+[![Copr build status](https://copr.fedorainfracloud.org/coprs/xanderlent/tbtools/package/rust-cursive_core/status_image/last_build.png)](https://copr.fedorainfracloud.org/coprs/xanderlent/tbtools/package/rust-cursive_core/)
 ### rust-include\_dir
 [![Copr build status](https://copr.fedorainfracloud.org/coprs/xanderlent/tbtools/package/rust-include_dir/status_image/last_build.png)](https://copr.fedorainfracloud.org/coprs/xanderlent/tbtools/package/rust-include_dir/)
 ### rust-include\_dir\_macros

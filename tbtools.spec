@@ -7,8 +7,8 @@
 
 Name:		tbtools
 Summary:	Thunderbolt/USB4 debugging tools
-Version:	0.5.0
-Release:	7%{?dist}
+Version:	0.6.0
+Release:	1%{?dist}
 # Most source files lack an explicit license
 # The main LICENSE file is MIT
 # scripts/verify-sysfs.sh: GPL-2.0-only, but not packaged at all
@@ -25,7 +25,7 @@ SourceLicense:	MIT
 # MIT
 # MIT OR Apache-2.0
 # Unlicense OR MIT
-License:	((MIT OR Apache-2.0) AND Unicode-DFS-2016) AND Apache-2.0 AND (Apache-2.0 OR BSL-1.0) AND (Apache-2.0 OR MIT) AND (Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT) AND (Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIt) AND MIT AND (MIT or Apache-2.0) AND (Unlicense MIT)
+License:	((MIT OR Apache-2.0) AND Unicode-DFS-2016) AND Apache-2.0 AND (Apache-2.0 OR BSL-1.0) AND (Apache-2.0 OR MIT) AND (Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT) AND (BSD-2-Clause OR Apache-2.0 OR MIT) AND MIT AND (MIT or Apache-2.0) AND (Unlicense OR MIT)
 URL:		https://github.com/intel/%{name}
 
 Source:		%{url}/archive/refs/tags/v%{version}.tar.gz

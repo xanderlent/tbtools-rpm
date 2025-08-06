@@ -4,12 +4,12 @@ RPM Package for Intel's tbtools
 ## Instructions
 Install the `tbtools` package to use tbtools. Report issues at the contact link.
 
+The `tbtools` package is backported from Fedora 43 for users in Fedora 41 and Fedora 42 in this COPR.
+
 Upstream is located on Intel's GitHub: [intel/tbtools](https://github.com/intel/tbtools)
 
 ## Dependency tree
 Shows only those dependencies not currently packaged in Fedora.
-
-- tbtools ([RHBZ#2363587](https://bugzilla.redhat.com/show_bug.cgi?id=2363587))
 
 ## Build Status
 ### tbtools

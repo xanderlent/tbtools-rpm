@@ -1,5 +1,5 @@
 # tbtools-rpm
-RPM Package for Intel's tbtools
+Backports of the tbtools package
 
 ## Instructions
 Install the `tbtools` package to use tbtools. Report issues at the contact link.

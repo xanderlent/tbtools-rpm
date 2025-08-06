@@ -8,9 +8,6 @@ The `tbtools` package is backported from Fedora 43 for users in Fedora 41 and Fe
 
 Upstream is located on Intel's GitHub: [intel/tbtools](https://github.com/intel/tbtools)
 
-## Dependency tree
-Shows only those dependencies not currently packaged in Fedora.
-
 ## Build Status
 ### tbtools
 [![Copr build status](https://copr.fedorainfracloud.org/coprs/xanderlent/tbtools/package/tbtools/status_image/last_build.png)](https://copr.fedorainfracloud.org/coprs/xanderlent/tbtools/package/tbtools/)
